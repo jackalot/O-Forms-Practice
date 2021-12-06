@@ -1,0 +1,25 @@
+{
+  "name": "O-Forms-Practice",
+  "version": "1.0.0",
+  "description": "This will have a basic form that collects email, country, zip code, password and password confirmation data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackalot/O-Forms-Practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackalot/O-Forms-Practice/issues"
+  },
+  "homepage": "https://github.com/jackalot/O-Forms-Practice#readme",
+  "devDependencies": {
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
+}
