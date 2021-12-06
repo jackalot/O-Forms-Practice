@@ -1,0 +1,1 @@
+document.querySelector(".submit").addEventListener("click",(()=>{console.log("click"),function(){const e=document.querySelector(".email");e.checkValidity()||(document.querySelector(".email-error").textContent=e.validationMessage)}()}));
