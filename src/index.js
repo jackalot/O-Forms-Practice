@@ -37,6 +37,7 @@ function validateForm() {
       document.querySelector('.zip-code-error').textContent = zipCode.validationMessage;
       return false;
     }
+    document.querySelector('.zip-code-error').textContent = '';
     return true;
   }
   const submit = document.querySelector('.submit');
