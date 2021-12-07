@@ -28,11 +28,23 @@ function validateForm() {
       return false;
     }
   }
+  function validateZipCode() {
+    const zipCode = document.querySelector('.zip-code');
+    if (zipCode.validity.rangeUnderflow) {
+      document.querySelector('.zip-code-error').textContent = zipCode.validationMessage;
+      return false;
+    } if (zipCode.validity.rangeOverflow) {
+      document.querySelector('.zip-code-error').textContent = zipCode.validationMessage;
+      return false;
+    }
+    return true;
+  }
   const submit = document.querySelector('.submit');
   submit.addEventListener('click', () => {
     console.log('click');
     const email = validateEmail();
     const country = validateCountry();
+    const zipCode = validateZipCode();
   });
 }
 validateForm();
