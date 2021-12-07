@@ -72,6 +72,30 @@ function validateForm() {
     return true;
   }
   const submit = document.querySelector('.submit');
+  const inputElements = document.querySelectorAll('input');
+  inputElements.forEach((element) => {
+    element.addEventListener('click', () => {
+      if (element.className === 'email') {
+        validateCountry();
+      }
+      if (element.className === 'country') {
+        validateEmail();
+        validateZipCode();
+      }
+      if (element.className === 'zip-code') {
+        validateCountry();
+        validatePassword();
+      }
+      if (element.className === 'password') {
+        validateZipCode();
+        validateConfirmPassword();
+      }
+      if (element.className === 'confirm-password') {
+        validatePassword();
+        validateConfirmPassword();
+      }
+    });
+  });
   submit.addEventListener('click', () => {
     console.log('click');
     const email = validateEmail();
