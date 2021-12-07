@@ -16,7 +16,7 @@ function validateForm() {
       return false;
     }
     if (country.value === 'unitedstates' || country.value === 'united states') {
-      document.querySelector('.country-error').textContent = 'this is ok';
+      document.querySelector('.country-error').textContent = '';
       return true;
     }
     if (country.value !== 'unitedstates' || country.value !== 'united states') {
