@@ -107,6 +107,10 @@ function validateForm() {
     const zipCode = validateZipCode();
     const password = validatePassword();
     const confirmPassword = validateConfirmPassword();
+    if (email === true && country === true && zipCode === true
+       && password === true && confirmPassword === true) {
+      document.querySelector('.high-five').textContent = 'all fields are valid, here have a high five: high five!';
+    }
   });
 }
 validateForm();
