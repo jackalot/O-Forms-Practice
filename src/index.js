@@ -40,12 +40,26 @@ function validateForm() {
     document.querySelector('.zip-code-error').textContent = '';
     return true;
   }
+  function validatePassword() {
+    const password = document.querySelector('.password');
+    if (!password.checkValidity()) {
+      document.querySelector('.password-error').textContent = password.validationMessage;
+      return false;
+    }
+    if (password.validity.rangeUnderflow) {
+      document.querySelector('.password-error').textContent = password.validationMessage;
+      return false;
+    }
+    document.querySelector('.password-error').textContent = '';
+    return true;
+  }
   const submit = document.querySelector('.submit');
   submit.addEventListener('click', () => {
     console.log('click');
     const email = validateEmail();
     const country = validateCountry();
     const zipCode = validateZipCode();
+    const password = validatePassword();
   });
 }
 validateForm();
