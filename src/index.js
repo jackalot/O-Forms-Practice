@@ -53,6 +53,24 @@ function validateForm() {
     document.querySelector('.password-error').textContent = '';
     return true;
   }
+  function validateConfirmPassword() {
+    const confirmPassword = document.querySelector('.confirm-password');
+    if (!confirmPassword.checkValidity()) {
+      document.querySelector('.confirm-password-error').textContent = confirmPassword.validationMessage;
+      return false;
+    }
+    if (confirmPassword.validity.rangeUnderflow) {
+      document.querySelector('.confirm-password-error').textContent = confirmPassword.validationMessage;
+      return false;
+    }
+    const password = document.querySelector('.password');
+    if (confirmPassword.value !== password.value) {
+      document.querySelector('.confirm-password-error').textContent = 'These passwords do not match';
+      return false;
+    }
+    document.querySelector('.confirm-password-error').textContent = '';
+    return true;
+  }
   const submit = document.querySelector('.submit');
   submit.addEventListener('click', () => {
     console.log('click');
@@ -60,6 +78,7 @@ function validateForm() {
     const country = validateCountry();
     const zipCode = validateZipCode();
     const password = validatePassword();
+    const confirmPassword = validateConfirmPassword();
   });
 }
 validateForm();
